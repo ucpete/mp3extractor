@@ -27,6 +27,11 @@ alert(function() {
       var j = jwplayer("jw6");
       return "http://archive.org" + j.getPlaylist()[j.getPlaylistIndex()].file;
     }
+    var soundcloudMetatag = document.querySelector("meta[content*='soundcloud://sounds:']");
+    if (soundcloudMetatag && soundcloudMetatag.content) { // soundcloud song pages only
+      var trackId = /\d+/.exec(soundcloudMetatag.content)[0];
+      return "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE";
+    }
     return false;
   };
   var url = determineUrl();

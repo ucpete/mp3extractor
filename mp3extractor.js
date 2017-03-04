@@ -1,4 +1,7 @@
-javascript:alert(function() {
+// to make a bookmarklet out of this:
+// copy all of this code and paste it into a JavaScript compressor like http://jscompress.com
+// then put "javascript:" in front of what it gives you, and save that as the URL for a bookmark.
+alert(function() {
   var copyUrl = function(url) {
     var d = document;
     var textarea = d.createElement("textarea");

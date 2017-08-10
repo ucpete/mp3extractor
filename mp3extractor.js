@@ -17,7 +17,7 @@ function makeAudioTag(info) {
   }
   var audioTag = "[audio]" + info.url + "[/audio]";
   if (info.title) {
-    return "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b] " + audioTag;
+    return "[pre]" + "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b]\n" + audioTag + "[/pre]";
   }
   return audioTag;
 }

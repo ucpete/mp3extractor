@@ -15,11 +15,11 @@ function makeAudioTag(info) {
   if (!info) {
     return false;
   }
-  var audioTag = "[audio]" + info.url + "[/audio]";
+  var contents = "[audio]" + info.url + "[/audio]";
   if (info.title) {
-    return "[pre]" + "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b]\n" + audioTag + "[/pre]";
+    contents = "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b]\n" + contents;
   }
-  return audioTag;
+  return "[pre]" + contents + "[/pre]";
 }
 function copyString(string) {
   if (!string) {

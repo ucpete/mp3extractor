@@ -78,10 +78,16 @@ function extractTrackInfo(w) {
   }
   return false;
 }
+function isSoundCloud() {
+  return document.location.host === "soundcloud.com";
+}
 alert(function() {
   var info = extractTrackInfo(window);
   if (info && copyString(makeAudioTag(info))) {
     return "Copied audio tag to clipboard!";
+  }
+  if (isSoundCloud()) {
+    return "For SoundCloud you have to be on the page of the song itself. Can't determine the URL otherwise!";
   }
   return "Could not determine URL of MP3...";
 }());

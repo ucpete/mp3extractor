@@ -76,6 +76,14 @@ function extractTrackInfo(w) {
       url: "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE"
     };
   }
+  var audioTag = w.document.querySelector("audioTag");
+  if (audioTag && audioTag.src) {
+    var titleMetaTag = w.document.querySelector("meta[property='og:title']");
+    return {
+      url: audioTag.src,
+      title: titleMetaTag && titleMetaTag.content
+    };
+  }
   return false;
 }
 alert(function() {

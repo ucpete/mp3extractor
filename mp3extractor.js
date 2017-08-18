@@ -1,26 +1,30 @@
 // to make a bookmarklet out of this:
 // copy all of this code and paste it into a JavaScript compressor like http://jscompress.com
 // then put "javascript:" in front of what it gives you, and save that as the URL for a bookmark.
-var REGEX_ON_YYYY_MM_DD = /on (\d{4}-\d{2}-\d{2})$/;
+
 function elemById(id) {
   return document.getElementById(id);
 }
+
 function elemsByClassName(className) {
   return document.getElementsByClassName(className);
 }
+
 function elemsByTag(tagName) {
   return document.getElementsByTagName(tagName);
 }
+
 function makeAudioTag(info) {
   if (!info) {
     return false;
   }
-  var audioTag = "[audio]" + info.url + "[/audio]";
+  var contents = "[audio]" + info.url + "[/audio]";
   if (info.title) {
-    return "[pre]" + "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b]\n" + audioTag + "[/pre]";
+    contents = "[b]" + (info.date ? info.date + " " : "") + info.title + "[/b]\n" + contents;
   }
-  return audioTag;
+  return "[pre]" + contents + "[/pre]";
 }
+
 function copyString(string) {
   if (!string) {
     return false;
@@ -37,6 +41,8 @@ function copyString(string) {
   d.body.removeChild(textarea);
   return true;
 }
+
+var REGEX_ON_YYYY_MM_DD = /on (\d{4}-\d{2}-\d{2})$/;
 function extractTrackInfo(w) {
   if (w.App) {
     if (w.App.Player && w.App.Player.sm_sound) {
@@ -78,6 +84,7 @@ function extractTrackInfo(w) {
   }
   return false;
 }
+
 alert(function() {
   var info = extractTrackInfo(window);
   if (info && copyString(makeAudioTag(info))) {

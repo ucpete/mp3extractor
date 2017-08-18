@@ -38,6 +38,7 @@ function copyString(string) {
   return true;
 }
 function extractTrackInfo(w) {
+  // TODO document this interface...
   if (w.App) {
     if (w.App.Player && w.App.Player.sm_sound) {
       // phish.in

@@ -72,8 +72,10 @@ function extractTrackInfo(w) {
   if (soundcloudMetatag && soundcloudMetatag.content) {
     // soundcloud song pages only
     var trackId = /\d+/.exec(soundcloudMetatag.content)[0];
+    var titleMetaTag = w.document.querySelector("meta[property='og:title']");
     return {
-      url: "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE"
+      url: "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE",
+      title: titleMetaTag && titleMetaTag.content
     };
   }
   return false;

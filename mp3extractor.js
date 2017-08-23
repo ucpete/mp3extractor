@@ -44,6 +44,7 @@ function copyString(string) {
 
 var REGEX_ON_YYYY_MM_DD = /on (\d{4}-\d{2}-\d{2})$/;
 function extractTrackInfo(w) {
+  // TODO document this interface...
   if (w.App) {
     if (w.App.Player && w.App.Player.sm_sound) {
       // phish.in
@@ -78,8 +79,10 @@ function extractTrackInfo(w) {
   if (soundcloudMetatag && soundcloudMetatag.content) {
     // soundcloud song pages only
     var trackId = /\d+/.exec(soundcloudMetatag.content)[0];
+    var titleMetaTag = w.document.querySelector("meta[property='og:title']");
     return {
-      url: "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE"
+      url: "https://api.soundcloud.com/tracks/"+trackId+"/stream?client_id=CLIENT_ID_GOES_HERE",
+      title: titleMetaTag && titleMetaTag.content
     };
   }
   var audioTag = w.document.querySelector("audio");
@@ -92,11 +95,16 @@ function extractTrackInfo(w) {
   }
   return false;
 }
-
+function isSoundCloud() {
+  return document.location.host === "soundcloud.com";
+}
 alert(function() {
   var info = extractTrackInfo(window);
   if (info && copyString(makeAudioTag(info))) {
     return "Copied audio tag to clipboard!";
+  }
+  if (isSoundCloud()) {
+    return "For SoundCloud you have to be on the page of the song itself. Can't determine the URL otherwise!";
   }
   return "Could not determine URL of MP3...";
 }());

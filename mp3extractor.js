@@ -104,7 +104,7 @@ alert(function() {
     return "Copied audio tag to clipboard!";
   }
   if (isSoundCloud()) {
-    return "For SoundCloud you have to be on the page of the song itself. Can't determine the URL otherwise!";
+    return "For SoundCloud you have to be on the page of the song itself. Can't determine the URL otherwise! If you are on the song page and see this error, refresh and try again.";
   }
   return "Could not determine URL of MP3...";
 }());

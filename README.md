@@ -8,9 +8,7 @@ As of August 2017, the following sites are supported:
 2. [archive.org](https://archive.org/details/etree)
 3. [SoundCloud](http://soundcloud.com)
 4. [relisten.net](http://relisten.net)
-5. [Bandcamp](https://bandcamp.com)*
-
-<sub>\* pending further testing</sub>
+5. [Bandcamp](https://bandcamp.com)
 
 ## Set-up
 In order to generate a bookmarklet, view the latest version of [the code](https://github.com/ucpete/mp3extractor/blob/master/mp3extractor.js) and follow the instructions in the comments on lines 1-3:

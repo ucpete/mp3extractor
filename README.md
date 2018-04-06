@@ -3,13 +3,14 @@
 ## Intro
 This repository is only intended for use in the [phish.net](http://phish.net) forum (http://forum.phish.net). The code is written for use as a bookmarklet that quickly enables embedding of `[audio]` tag'd audio files from various common streaming sites in the Phish community.
 
-As of August 2017, the following sites are supported:
+As of January 2018, the following sites are supported:
 1. [phish.in](http://phish.in)
 2. [archive.org](https://archive.org/details/etree)
-3. [SoundCloud](http://soundcloud.com)
+3. ~~[SoundCloud](http://soundcloud.com)~~*
 4. [relisten.net](http://relisten.net)
 5. [Bandcamp](https://bandcamp.com)
 
+<sub>\* SoundCloud has changed how API access is authenticated, and is no longer accepting registration of new apps. Until we can acquire an API key for phish.net, SoundCloud will no longer be supported : /</sub>
 ## Set-up
 In order to generate a bookmarklet, view the latest version of [the code](https://github.com/ucpete/mp3extractor/blob/master/mp3extractor.js) and follow the instructions in the comments on lines 1-3:
 ```javascript

@@ -3,14 +3,14 @@
 ## Intro
 This repository is only intended for use in the [phish.net](http://phish.net) forum (http://forum.phish.net). The code is written for use as a bookmarklet that quickly enables embedding of `[audio]` tag'd audio files from various common streaming sites in the Phish community.
 
-As of January 2018, the following sites are supported:
+As of April 2018, the following sites are supported:
 1. [phish.in](http://phish.in)
 2. [archive.org](https://archive.org/details/etree)
-3. ~~[SoundCloud](http://soundcloud.com)~~*
+3. [SoundCloud](http://soundcloud.com)*
 4. [relisten.net](http://relisten.net)
 5. [Bandcamp](https://bandcamp.com)
 
-<sub>\* SoundCloud has changed how API access is authenticated, and is no longer accepting registration of new apps. Until we can acquire an API key for phish.net, SoundCloud will no longer be supported : /</sub>
+<sub>\* SoundCloud changes `CLIENT_IDs` associated with accounts from time to time; please [create an issue](https://github.com/ucpete/mp3extractor/issues/new) or contact us if SoundCloud embeds stop working and we will update the `CLIENT_ID` link on this page, and will replace the `CLIENT_ID` in existing comments with the new one.</sub>
 ## Set-up
 In order to generate a bookmarklet, view the latest version of [the code](https://github.com/ucpete/mp3extractor/blob/master/mp3extractor.js) and follow the instructions in the comments on lines 1-3:
 ```javascript
@@ -19,7 +19,7 @@ In order to generate a bookmarklet, view the latest version of [the code](https:
 // then put "javascript:" in front of what it gives you, and save that as the URL for a bookmark.
 ```
 
-In other words, copy the latest version of the code and paste it [here](http://jscompress.com). Before compressing the code, you will need to replace the `CLIENT_ID_GOES_HERE` bit (seen on [line 82](https://github.com/ucpete/mp3extractor/blob/master/mp3extractor.js#L82)) with a valid SoundCloud `client_id` – SoundCloud streaming will not work without one! Forum users are welcome to use the `client_id` of the [@PhishHacks](https://soundcloud.com/PhishHacks) account, which can be found [here](https://pastebin.com/raw/RaVVyEAT), or if you are clever enough you can figure out a valid `client_id` by visiting the URL contained within an embed element for a downloadable track directly (e.g. [this URL](https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/269268224)) and right clicking on the download button and copying the URL from there (which will contain a valid `client_id`). Once you've overwritten `CLIENT_ID_GOES_HERE` with a valid `client_id` at [JSCompress](http://jscompress.com), click "Compress JavaScript" and copy the compressed code to your clipboard. Now you're ready to create a new bookmark in your web browser – for the 'Address' or 'URL', type `javascript:` then paste in the [JSCompress](http://jscompress.com)'d version of the code you just compressed. There should **not** be a space after `javascript:` before your pasted code, and there should **not** be any HTML URL encoding characters present in the pasted address, e.g. `%20` instead of a space, `%2F` instead of a slash.
+In other words, copy the latest version of the code and paste it [here](http://jscompress.com). Before compressing the code, you will need to replace the `CLIENT_ID_GOES_HERE` bit (seen on [line 84](https://github.com/ucpete/mp3extractor/blob/master/mp3extractor.js#L84)) with a valid SoundCloud `client_id` – SoundCloud streaming will not work without one! Forum users are welcome to use the `client_id` of the [@PhishHacks](https://soundcloud.com/PhishHacks) account, which can be found [here](https://pastebin.com/raw/RaVVyEAT), or if you are clever enough you can figure out a valid `client_id` by visiting the URL contained within an embed element for a downloadable track directly (e.g. [this URL](https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/269268224)) and right clicking on the download button and copying the URL from there (which will contain a valid `client_id`). Once you've overwritten `CLIENT_ID_GOES_HERE` with a valid `client_id` at [JSCompress](http://jscompress.com), click "Compress JavaScript" and copy the compressed code to your clipboard. Now you're ready to create a new bookmark in your web browser – for the 'Address' or 'URL', type `javascript:` then paste in the [JSCompress](http://jscompress.com)'d version of the code you just compressed. There should **not** be a space after `javascript:` before your pasted code, and there should **not** be any HTML URL encoding characters present in the pasted address, e.g. `%20` instead of a space, `%2F` instead of a slash.
 
 **NOTE:** We can only confirm that this bookmarklet works in the following browsers:
 1. Chrome

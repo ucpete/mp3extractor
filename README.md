@@ -3,11 +3,11 @@
 ## Intro
 This repository is only intended for use in the [phish.net](https://phish.net) forum (https://forum.phish.net). The code is written for use as a bookmarklet that quickly enables embedding of `[audio]` tag'd audio files from various common streaming sites in the Phish community.
 
-As of April 2018, the following sites are supported:
+As of May 2020, the following sites are supported:
 1. [phish.in](https://phish.in)
-2. [archive.org](https://archive.org/details/etree)
+2. ~[archive.org](https://archive.org/details/etree)~
 3. [SoundCloud](https://soundcloud.com)*
-4. [relisten.net](https://relisten.net)
+4. ~[relisten.net](https://relisten.net)~
 5. [Bandcamp](https://bandcamp.com)
 
 <sub>\* SoundCloud changes `CLIENT_IDs` associated with accounts from time to time; please [create an issue](https://github.com/ucpete/mp3extractor/issues/new) or contact us if SoundCloud embeds stop working and we will update the `CLIENT_ID` link on this page, and will replace the `CLIENT_ID` in existing comments with the new one.</sub>

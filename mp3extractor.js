@@ -54,15 +54,14 @@ function extractTrackInfo(w) {
         title: elemById("player_title").innerText
       };
     }
-    if (w.App.player && w.App.player.sound) {
-      // relisten.net
-      var dateMatch = elemsByClassName("album")[0].innerText.match(REGEX_ON_YYYY_MM_DD);
-      return {
-        date: dateMatch && dateMatch[1],
-        url: w.App.player.sound.url,
-        title: elemsByClassName("title")[0].innerText
-      };
-    }
+  }
+  if (w.player && w.player.play) {
+    // relisten.net
+    return {
+      date: elemsByClassName("jsx-1683372427 heading")[3].innerText + " -",
+      url: w.player.currentTrack.trackUrl,
+      title: elemsByClassName("artist")[0].innerText + " - " + elemsByClassName("jsx-2672471479 song-title")[0].innerText
+    };
   }
   if (w.jwplayer) {
     // archive.org

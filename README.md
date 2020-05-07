@@ -5,7 +5,7 @@ This repository is only intended for use in the [phish.net](https://phish.net) f
 
 As of May 2020, the following sites are supported:
 1. [phish.in](https://phish.in)
-2. ~[archive.org](https://archive.org/details/etree)~
+2. [archive.org](https://archive.org/details/etree)
 3. [SoundCloud](https://soundcloud.com)*
 4. [relisten.net](https://relisten.net)
 5. [Bandcamp](https://bandcamp.com)

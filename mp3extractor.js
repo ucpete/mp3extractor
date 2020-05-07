@@ -65,13 +65,12 @@ function extractTrackInfo(w) {
   }
   if (w.jwplayer) {
     // archive.org
-    var player = w.jwplayer("jw6");
-    var track = player.getPlaylist()[player.getPlaylistIndex()];
+    var track = elemsByClassName("jwrowV2 playing")[0].innerText.split("-")[0];
     var dateMatch = elemsByTag("h1")[0].innerText.match(REGEX_ON_YYYY_MM_DD);
     return {
-      date: dateMatch && dateMatch[1],
-      url: "http://archive.org" + track.file,
-      title: track.title.replace(/\d+\. /, "")
+      date: dateMatch && dateMatch[1] + " -",
+      url: elemsByClassName("jw-video")[0].src,
+      title: document.getElementsByClassName("key-val-big")[0].getElementsByTagName("span")[0].innerText + " - " + track.replace(/\d+ /, "")
     };
   }
   var soundcloudMetatag = w.document.querySelector("meta[content*='soundcloud://sounds:']");

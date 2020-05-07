@@ -25,6 +25,7 @@ In other words, copy the latest version of the code and paste it [here](https://
 1. Chrome
 2. Opera
 3. Firefox (but must have recent builds – old versions do **not** support bookmarklets)
+4. Brave
 
 ## Usage
 
